@@ -1,0 +1,38 @@
+
+ion-row{
+    border: 1.3px solid #2969d7;
+    border-radius: 2px;
+    padding: 0.2rem;
+}
+
+ion-input{
+    font-size: 1rem;
+}
+
+ion-label{
+    h4{
+        font-size: 1.3rem;
+    }
+}
+ion-item{
+
+    ion-row{
+        ion-text{
+            letter-spacing: 0.2rem;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+        }
+    }
+}
+
+
+.price{
+    width: 5rem;  
+}
+
+.dotStyle{
+    border: 1px solid #29d72f;
+    padding: 0 0.2rem;
+    margin-right: 2vw;
+}

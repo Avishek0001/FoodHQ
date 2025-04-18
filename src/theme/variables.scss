@@ -1,0 +1,42 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root {
+    //white
+ 	--ion-color-white: #fffff;
+	--ion-color-white-rgb: 15,255,255;
+	--ion-color-white-contrast: #000000;
+	--ion-color-white-contrast-rgb: 0,0,0;
+	--ion-color-white-shade: #0de0e0;
+	--ion-color-white-tint: #27ffff;
+}
+
+.ion-color-white {
+	--ion-color-base: var(--ion-color-white);
+	--ion-color-base-rgb: var(--ion-color-white-rgb);
+	--ion-color-contrast: var(--ion-color-white-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-white-contrast-rgb);
+	--ion-color-shade: var(--ion-color-white-shade);
+	--ion-color-tint: var(--ion-color-white-tint);
+}
+
+
+.address-modal::part(content) {
+  --height: 70%;
+  position: absolute;
+  bottom: 0;
+  --border-radius: 5px;
+}
+
+.custom-modal::part(content) {
+  --height: 78%;
+  position: absolute;
+  bottom: 0;
+  --border-radius: 5px;
+}
+
+.home-modal::part(content) {
+  --height: 90%;
+  position: absolute;
+  bottom: 0;
+  --border-radius: 5px;
+}

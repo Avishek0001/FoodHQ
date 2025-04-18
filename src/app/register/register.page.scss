@@ -1,0 +1,44 @@
+
+ion-input{
+    border: 1.5px solid #366be7;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+ion-button{
+    --background: #366be7;
+    --border-radius: 10px;
+    --box-shadow: none;
+    --color: #fff;
+    --padding-end: 20px;
+    --padding-start: 20px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.logo{
+    width: 200px;
+}
+
+h2{
+    font-size: 2.1rem;
+    font-weight: 530;
+    color: #366be7;
+    margin-bottom: 20px;
+}
+
+.register-page{
+    color: #366be7;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+

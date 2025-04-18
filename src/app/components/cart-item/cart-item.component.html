@@ -1,0 +1,16 @@
+<ion-item >
+  <ion-text color="primary">
+    <span class="dotStyle">&#9679;</span>
+  </ion-text>
+  <ion-label class="ion-text-wrap">
+    {{item?.name}}
+  </ion-label>
+  <ion-row>  
+      <ion-icon color="primary" name="remove-outline" (click) = "quantityMinus()"></ion-icon>
+      <ion-text  color="primary">{{item?.quantity}}</ion-text>
+      <ion-icon color="primary" name="add-outline" (click) = "quantityPlus()" ></ion-icon>
+    </ion-row>
+    <ion-text slot="end" color="dark" class="price ion-text-right">
+      <h6> ₹ {{item?.price * item?.quantity}} </h6>
+    </ion-text>
+</ion-item>

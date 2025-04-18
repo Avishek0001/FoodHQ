@@ -1,0 +1,53 @@
+<ion-header class="dashedBorderBottom">
+  <ion-toolbar>
+    <ion-title>
+      Manage Address 
+     </ion-title>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/tabs/account"></ion-back-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <app-empty-screen *ngIf="addresses?.length == 0" [model]="model"></app-empty-screen>
+
+  <ion-list *ngIf="addresses?.length >0">
+    <ion-item-divider>Saved Address</ion-item-divider>
+    <ion-item-group class="ion-padding">
+
+    <ion-item lines="full" *ngFor="let item of addresses,index as i" class="ion-no-padding">
+      <ion-icon name="home-outline" color="primary" slot="start"></ion-icon>
+      <ion-label>
+        <ion-label class="address_title">{{item.house}}</ion-label>
+        <ion-text color="medium" class="ion-test-justify">
+          <p  class="ion-text wrap">
+            {{item.address}}
+          </p>
+          <p  class="ion-text wrap">
+           {{item.street}}
+          </p>
+          <p  class="ion-text wrap">
+           {{item.landmark}}
+          </p>
+        </ion-text>
+        <ion-row>
+          <ion-button fill="clear" color="primary" (click)="editAddress(item)">Edit </ion-button>
+          <ion-button fill="clear" color="primary" (click)="deleteAddress(item)">Delete </ion-button>
+        </ion-row>
+      </ion-label>
+    </ion-item>
+  </ion-item-group>
+
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-button
+    [routerLink] = "['/','address','edit-address']"
+     fill="outline" color="primary" expand="block" class="ion-margin-horizontal">ADD NEW Address</ion-button>
+  </ion-toolbar>
+</ion-footer>

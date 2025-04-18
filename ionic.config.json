@@ -1,0 +1,8 @@
+{
+  "name": "Food Delivery App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "047b3eec"
+}

@@ -1,0 +1,105 @@
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dashedBorderBottom{
+    border-bottom: 1px dashed #424141af;
+    padding-bottom: 1vh;
+    margin-bottom: 1vh;
+}
+
+ion-header{
+    ion-back-button{
+        color:#fff ;
+    }
+}
+
+ion-content{
+  ion-label{
+    h4{
+      font-size: 1.2rem;
+      font-weight: 550;
+    }
+  }
+}
+
+
+
+// For Button css
+ion-toggle {
+    padding: 12px;
+  
+    --handle-width: 25px;
+    --handle-height: 27px;
+    --handle-max-height: auto;
+    --handle-spacing: 6px;
+  
+    contain: none;
+  }
+  
+  ion-toggle::part(track),
+  ion-toggle.toggle-checked::part(track) {
+    height: 10px;
+    width: 65px;
+  
+    background: #ddd;
+  
+    /* Required for iOS handle to overflow the height of the track */
+    overflow: visible;
+  }
+  
+  ion-toggle::part(handle) {
+    background: #eb7769;
+  
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  
+  ion-toggle.toggle-checked::part(handle) {
+    background: #95c34e;
+  }
+
+
+  .veg{
+    align-items: center;
+  }
+
+
+  ion-list-header{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .resTitle{
+    font-size: 1.2rem;
+  }
+  .resAdd{
+    font-size: 0.8rem;
+  }
+
+  ion-text{
+      font-size: 0.8rem;
+    p{
+        margin-top: 0.2rem;
+        font-weight:normal
+    }
+  }
+
+  ion-footer{
+    h4,p{
+        margin-left: 3%;
+    }
+    h4{
+        font-size: 1rem;
+    }
+    p{
+        font-size: 0.75rem !important;
+        letter-spacing:0.5px;
+    }
+    ion-button{
+        color: #fff;
+       
+    }
+
+  }

@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title color="primary">EDIT ACCOUNT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <ion-list class="ion-padding-horizontal ion-margin-bottom">
+
+      <ion-item class="ion-margin-vertical">
+        <ion-label position="floating">PHONE NUMBER</ion-label>
+        <ion-input 
+          type="tel" 
+          formControlName="phone">
+        </ion-input>
+      </ion-item>
+     
+
+      <ion-item>
+        <ion-label position="floating">EMAIL ADDRESS</ion-label>
+        <ion-input 
+          type="email"
+          formControlName="email">
+        </ion-input>
+      </ion-item>
+     
+
+    </ion-list>
+
+    <div class="ion-padding-horizontal ion-text-center">
+      <ion-button expand="block" type="submit" color="primary" *ngIf="!isSubmitted" [disabled]="profileForm.invalid">UPDATE</ion-button>
+      <ion-button  color="primary" *ngIf="isSubmitted" [disabled]="profileForm.invalid">UPDATE</ion-button>
+    </div>
+  </form>
+</ion-content>

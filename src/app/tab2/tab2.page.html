@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item color="primary">  
+      <h1>Food HQ</h1>
+      <ion-icon name="fast-food-outline"></ion-icon>    
+  </ion-item>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-item >
+    <ion-label color="primary">
+      <h2>Search Below</h2>
+    </ion-label>
+
+   </ion-item>
+
+   
+   <ion-searchbar animated="true"
+   show-cancel-button="focus"
+    placeholder="Search Food or Restaurant"
+    debounce="1000"
+    #searchInput
+     (ionChange) = "onChange($event)"></ion-searchbar>
+
+  <app-loading-restaurant *ngIf="isLoading"></app-loading-restaurant>
+  <app-empty-screen *ngIf="!isLoading && (restaurant?.length ==0 || searchItem?.length == 0)" [model]="model"></app-empty-screen>
+  <ion-list *ngIf="!isLoading && Allrestaurants.length > 0">
+    <ion-list-header>
+      <ion-label>
+        <h4 >Search result for {{searchItem}}</h4>
+      </ion-label>
+    </ion-list-header>
+  </ion-list>
+  <app-restaurant *ngFor="let restaurant of restaurant" [restaurant]="restaurant" [routerLink]="['/','restaurants',restaurant.uid]"></app-restaurant>
+
+</ion-content>

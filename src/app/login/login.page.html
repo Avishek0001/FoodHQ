@@ -1,0 +1,43 @@
+
+<ion-content [fullscreen]="true"  class="page-background">
+  <div class="content-wrapper">
+    <ion-card-header class="card-header">
+      <img class="logo" src="../../assets/logo.png" alt="">
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-item  lines="none" class="centered-item">
+        <img src="../../assets/4.jpg" alt="">
+      </ion-item>
+      
+      <ion-item lines="none">
+        <h2>Login</h2>
+      </ion-item>
+
+      <div class="login_form">        
+        
+        <form [formGroup]="loginForm">
+          <ion-item  lines="none">
+            <ion-input type="number" maxlength="10" formControlName="phone" class="ion-padding" placeholder="Enter Phone Number"></ion-input>
+          </ion-item>
+          <ion-item  lines="none">
+            <ion-input type="number" maxlength="10" formControlName="phone" class="ion-padding" placeholder="Enter Password"></ion-input>
+          </ion-item>
+          <div class="register-page" (click)="register()">
+            <p><span>New Customer? Register Here</span></p>
+          </div>
+          <ion-item lines="none" >
+            
+            <ion-button type="submit" expand="block" (click)="login()" [disabled]="!loginForm.valid">
+              <span>Login</span>
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </form>
+      </div>
+        
+        
+      </ion-card-content>
+    </div>
+  </ion-content>
+

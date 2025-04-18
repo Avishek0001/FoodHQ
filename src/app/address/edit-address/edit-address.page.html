@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>edit-address</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/address"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-label><p>Please Turn On Your Device Location </p></ion-label>
+  </ion-item>
+
+  <div class="map">
+    <app-map [center]="center" [update]="update" (location) = "fetchLocation($event)"></app-map>
+  </div>
+
+
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item lines="none">
+        <ion-icon name="location-outline" color="dark" slot="start"></ion-icon>
+        <ion-label>{{location?.title}}</ion-label>
+        <ion-button slot="end" size="small" color="primary" (click)="searchLocation()">
+          <span>Change</span>
+        </ion-button>
+      </ion-item>
+      <ion-row class="ion-padding-horizontal ion-text-justify">
+        <ion-note class="ion-text-wrap ion-padding-horizontal">
+    {{location?.address}}        
+      </ion-note>
+      </ion-row>
+      <ion-item-group class="ion-padding">
+        <ion-item>
+          <ion-label color="primary" class="ion-padding-bottom" position="floating">
+            <span>
+              HOUSE/FLAT/Building NO.
+            </span>
+          </ion-label>
+          <ion-input type="text" color="primary"   autocomplete autocorrect formControlName="house"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" class="ion-padding-bottom" position="floating">
+            <span>
+
+              LandMark
+            </span>
+          </ion-label>
+          <ion-input type="text" color="primary"   autocomplete autocorrect formControlName="landmark"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" class="ion-padding-bottom" position="floating">
+            <span>
+            Save As
+            </span>
+          </ion-label>
+          <ion-input type="text" color="primary"   autocomplete autocorrect formControlName="title"></ion-input>
+        </ion-item>
+      </ion-item-group>
+
+    </ion-list>
+
+    <div class="ion-padding-horizontal">
+      <ion-button
+      *ngIf="!isSubmitted"
+       expand="block" type="submit" color="primary" [disabled]="!form?.valid" (click)="onSubmit()">Save Address</ion-button>
+      <ion-button
+      *ngIf="isSubmitted"
+       expand="block"
+       type="submit" 
+       color="success" >
+       
+       <ion-spinner name="crescent"></ion-spinner></ion-button>
+    </div>
+  </form>
+</ion-content>

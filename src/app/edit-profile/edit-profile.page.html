@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Edit-Profile</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/account"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <img class="profile" src="../../assets/avatar.png" alt="">
+  </ion-item>
+
+  <ion-item>
+    <ion-list>
+      <ion-col>
+
+        <ion-label color="primary">Name</ion-label>
+        <p>{{profile?.name}}</p>
+      </ion-col>
+      <ion-col>
+
+        <ion-label color="primary">Phone Number</ion-label>
+        <p>{{profile?.phone}}</p>
+      </ion-col>
+   
+      <ion-col>
+
+        <ion-label color="primary">Email</ion-label>
+        <p>{{profile?.email}}</p>
+      </ion-col>
+   
+      <ion-col>
+
+        <ion-label color="primary">Saved Card Details (optional)</ion-label>
+        <img src="../../assets/card.png" alt="">
+        <p>2345 45xx xxxx xx45</p>
+      </ion-col>
+    </ion-list>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="editProfile()">Edit PRofile</ion-button>
+  </ion-item>
+
+
+
+ 
+</ion-content>

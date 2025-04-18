@@ -1,0 +1,41 @@
+ion-back-button{
+    color: #ffffff;
+    
+}
+
+.ios{
+    ion-item-divider{
+        font-size: 1rem;
+        padding: 2vh;
+    }
+}
+
+.address_title{
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+ion-item{
+    ion-text{
+        p{
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    }
+}
+
+ion-item{
+    ion-row{
+        ion-button{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+}
+
+ion-footer{
+    ion-button{
+        font-weight: 600;
+    }
+}

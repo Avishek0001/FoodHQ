@@ -1,0 +1,30 @@
+ion-item{
+
+    ion-thumbnail{
+        height:10vh;
+        width:20vw;
+        img{
+            border-radius: 5px;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    
+    
+    ion-row{
+        border: 1px solid #b1adadaf;
+        border-radius: 5px;
+        padding: 0.3rem;
+    }
+}
+
+h4,p{
+    margin-left: 3%;
+}
+h4{
+    font-size: 1rem;
+}
+p{
+    font-size: 0.9rem !important;
+    letter-spacing:0.5px;
+}
