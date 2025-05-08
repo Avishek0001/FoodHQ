@@ -6,6 +6,8 @@ import { CartService } from '../services/cart/cart.service';
 import { Order } from '../models/order.model';
 import { Router } from '@angular/router';
 import { ProfileService } from '../services/profile.service';
+import { AuthService } from '../services/auth/auth.service';
+import { StorageService } from '../services/storage/storage.service';
 
 @Component({
   selector: 'app-account',
@@ -17,7 +19,7 @@ export class AccountPage implements OnInit {
   orders:Order[]=[]
   orderSub:Subscription;
   profileSub:Subscription
-  constructor(private apiService:ApiService,private profileService:ProfileService,private route:Router,private orderService:OrderService,private cartService:CartService) { }
+  constructor( private storageService:StorageService, private authService:AuthService,  private apiService:ApiService,private profileService:ProfileService,private route:Router,private orderService:OrderService,private cartService:CartService) { }
 
   ngOnInit() {
     
@@ -41,18 +43,33 @@ export class AccountPage implements OnInit {
 
   async getData(){
     setTimeout(async()=>{
-      this.profile = {
-        name:'Avishek Kundu',
-        phone: '9088384498',
-        email: 'avishekkundu@gmail.com'
-      };
-await this.orderService.getOrders()
+     
+      this.storageService.getStorage('profile').then((result: any) => {
+        if (result && result.value) {
+          this.profile = JSON.parse(result.value); 
+          console.log(this.profile); 
+        } else {
+          console.error('Invalid or null profile data'); 
+        }
+      }).catch((error) => {
+        console.error('Error fetching profile:', error); 
+      });
+
+      
+  await this.orderService.getOrders()
       this.apiService.setProfile(this.profile)
 
     },1000)
   }
 
   logout(){
+    this.authService.logout().then(()=>{
+      this.route.navigate(['/login']);
+    }
+    ).catch((err)=>{
+      console.log(err);
+    }
+    )
     
   }
 

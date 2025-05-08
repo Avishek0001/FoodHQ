@@ -8,7 +8,9 @@ import { Restaurant } from 'src/app/models/restaurant.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
+
   profile:any
    banners=[
     {banner:"../../assets/banner1.jpg"},

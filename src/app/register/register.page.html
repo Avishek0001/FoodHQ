@@ -11,25 +11,31 @@
       </ion-item>
       
       <ion-item lines="none">
-        <h2>New Customer,Register</h2>
+        <h2>New Customer !</h2>
       </ion-item>
 
       <div class="login_form">        
         
-        <form [formGroup]="loginForm">
+        <form [formGroup]="registerForm">
+          <ion-item  lines="none">
+            <ion-input type="text" formControlName="username" class="ion-padding" placeholder="Enter Username"></ion-input>
+          </ion-item>
           <ion-item  lines="none">
             <ion-input type="number" maxlength="10" formControlName="phone" class="ion-padding" placeholder="Enter Phone Number"></ion-input>
           </ion-item>
           <ion-item  lines="none">
-            <ion-input type="number" maxlength="10" formControlName="phone" class="ion-padding" placeholder="Enter Password"></ion-input>
+            <ion-input type="email"  formControlName="email" class="ion-padding" placeholder="Enter Email (Optional)"></ion-input>
+          </ion-item>
+          <ion-item  lines="none">
+            <ion-input type="password"  formControlName="password" class="ion-padding" placeholder="Enter Password"></ion-input>
           </ion-item>
           <div class="register-page" (click)="login()">
             <p><span>Already Registered? Login Here</span></p>
           </div>
           <ion-item lines="none" >
             
-            <ion-button type="submit" expand="block" (click)="register()" [disabled]="!loginForm.valid">
-              <span>Login</span>
+            <ion-button type="submit" expand="block" (click)="register()" [disabled]="!registerForm.valid">
+              <span>Register</span>
               <ion-icon name="arrow-forward-outline"></ion-icon>
             </ion-button>
           </ion-item>
